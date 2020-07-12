@@ -1,0 +1,14 @@
+{
+	"iconDefinitions": {
+		"_goplus_": {
+			"iconPath": "../images/icon.png"
+		}
+	},
+
+	"fileExtensions": {
+		"gop": "_goplus_"
+	},
+	"languageIds": {
+		"gop": "_goplus_"
+	}
+}

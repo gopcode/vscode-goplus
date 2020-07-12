@@ -1,0 +1,167 @@
+{
+    "name": "goplus",
+    "displayName": "goplus",
+    "description": "GoPlus",
+    "version": "0.0.10",
+    "engines": {
+        "vscode": "^1.46.0"
+    },
+    "publisher": "wyvern",
+    "activationEvents": [
+        "onLanguage:gop"
+    ],
+    "license": "MIT",
+    "icon": "images/icon.png",
+    "main": "./out/gopMain",
+    "categories": [
+        "Programming Languages",
+        "Themes",
+        "Formatters"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gopcode/vscode-goplus"
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "gop",
+                "aliases": [
+                    "goplus",
+                    "gop"
+                ],
+                "extensions": [
+                    ".gop"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "gop",
+                "scopeName": "source.gop",
+                "path": "./syntaxes/gop.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "gop",
+                "path": "./snippets/goplus.json"
+            }
+        ],
+        "configurationDefaults": {
+            "[gop]": {
+                "editor.insertSpaces": false,
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {
+                    "source.organizeImports": true
+                }
+            }
+        },
+        "configuration": {
+            "type": "object",
+            "title": "GoPlus",
+            "properties": {
+                "goplus.formatTool": {
+                    "type": "string",
+                    "default": "qfmt",
+                    "description": "Pick 'qfmt' to run on format.",
+                    "scope": "resource",
+                    "enum": [
+                        "qfmt"
+                    ]
+                },
+                "goplus.formatFlags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [],
+                    "description": "Flags to pass to format tool (e.g. [\"-w\"])",
+                    "scope": "resource"
+                },
+                "goplus.toolsEnvVars": {
+                    "type": "object",
+                    "default": {},
+                    "description": "Environment variables that will passed to the processes that run the Go tools (e.g. CGO_CFLAGS)",
+                    "scope": "resource"
+                },
+                "goplus.alternateTools": {
+                    "type": "object",
+                    "default": {},
+                    "description": "Alternate tools or alternate paths for the same tools used by the Go extension. Provide either absolute path or the name of the binary in GOPATH/bin, GOROOT/bin or PATH. Useful when you want to use wrapper script for the Go tools or versioned tools from https://gopkg.in.",
+                    "scope": "resource",
+                    "properties": {
+                        "qfmt": {
+                            "type": "string",
+                            "default": "qfmt",
+                            "description": "Alternate tool to use instead of the qfmt binary or alternate path to use for the qfmt binary."
+                        }
+                    }
+                },
+                "goplus.docsTool": {
+                    "type": "string",
+                    "default": "godoc",
+                    "description": "Pick 'godoc' or 'gogetdoc' to get documentation. Not applicable when using the language server.",
+                    "scope": "resource",
+                    "enum": [
+                      "godoc"
+                    ]
+                  },
+                "goplus.gocodeFlags": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "default": [
+                      "-builtin",
+                      "-ignore-case"
+                    ],
+                    "description": "Additional flags to pass to gocode. Not applicable when using the language server.",
+                    "scope": "resource"
+                }
+            }
+        },
+        "commands": [
+            {
+            "command": "goplus.import.add",
+            "title": "GoPlus: Add Import",
+            "description": "Add an import declaration"
+          }
+        ],
+        "iconThemes": [
+            {
+                "id": "vs-goplus",
+                "label": "GoPlus (Visual Studio Code)",
+                "path": "./fileicons/vs_goplus-icons-theme.json"
+            }
+        ]
+    },
+    "dependencies": {
+        "vscode-debugadapter": "^1.40.0",
+        "vscode-debugprotocol": "^1.40.0",
+        "vscode-languageclient": "6.1.0",
+        "moment": "^2.24.0",
+        "semver": "^7.3.2",
+        "tree-kill": "file:third_party/tree-kill"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.46.0",
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^7.0.2",
+        "@types/node": "^13.11.0",
+        "@types/semver": "^7.1.0",
+        "eslint": "^6.8.0",
+        "@typescript-eslint/parser": "^2.30.0",
+        "@typescript-eslint/eslint-plugin": "^2.30.0",
+        "glob": "^7.1.6",
+        "mocha": "^7.1.2",
+        "typescript": "^3.8.3",
+        "vscode-test": "^1.3.0"
+    }
+}

@@ -11,5 +11,13 @@
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
+# Output of nodejs and typescript
+out
+node_modules
+
+# Other
+.vscode-test
+.DS_Store
+
 # Dependency directories (remove the comment below to include it)
 # vendor/
