@@ -7,6 +7,10 @@
 
 This extension provides rich language support for the Go+ programming language in VS Code.
 
+## Supported Vscode versions
+
+- 1.46.0+
+
 ## Example
 
 ![example](https://github.com/gopcode/vscode-goplus/blob/master/images/example3.gif)
