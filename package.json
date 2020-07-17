@@ -2,7 +2,7 @@
     "name": "goplus",
     "displayName": "goplus",
     "description": "GoPlus",
-    "version": "0.0.10",
+    "version": "0.7.2",
     "engines": {
         "vscode": "^1.46.0"
     },
@@ -10,7 +10,7 @@
     "activationEvents": [
         "onLanguage:gop"
     ],
-    "license": "MIT",
+    "license": "Apache",
     "icon": "images/icon.png",
     "main": "./out/gopMain",
     "categories": [
@@ -110,17 +110,17 @@
                     "description": "Pick 'godoc' or 'gogetdoc' to get documentation. Not applicable when using the language server.",
                     "scope": "resource",
                     "enum": [
-                      "godoc"
+                        "godoc"
                     ]
-                  },
+                },
                 "goplus.gocodeFlags": {
                     "type": "array",
                     "items": {
-                      "type": "string"
+                        "type": "string"
                     },
                     "default": [
-                      "-builtin",
-                      "-ignore-case"
+                        "-builtin",
+                        "-ignore-case"
                     ],
                     "description": "Additional flags to pass to gocode. Not applicable when using the language server.",
                     "scope": "resource"
@@ -129,10 +129,10 @@
         },
         "commands": [
             {
-            "command": "goplus.import.add",
-            "title": "GoPlus: Add Import",
-            "description": "Add an import declaration"
-          }
+                "command": "goplus.import.add",
+                "title": "GoPlus: Add Import",
+                "description": "Add an import declaration"
+            }
         ],
         "iconThemes": [
             {

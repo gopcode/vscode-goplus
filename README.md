@@ -13,7 +13,7 @@ This extension provides rich language support for the Go+ programming language i
 
 ## Example
 
-![example](https://github.com/gopcode/vscode-goplus/blob/master/images/example3.gif)
+![example](https://raw.githubusercontent.com/gopcode/vscode-goplus/master/images/example3.gif)
 
 ## Install Go
 Before you start coding, make sure that you have already installed Go, as explained in the Go installation guide.
