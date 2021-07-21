@@ -148,7 +148,7 @@
         "vscode-languageclient": "6.1.0",
         "moment": "^2.24.0",
         "semver": "^7.3.2",
-        "lodash": "^4.17.19",
+        "lodash": "^4.17.21",
         "tree-kill": "file:third_party/tree-kill"
     },
     "devDependencies": {
