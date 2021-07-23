@@ -4,7 +4,7 @@ import vscode = require('vscode');
 import { getImportablePackages } from './gopPackages';
 import { promptForMissingTool } from './gopInstallTools';
 import { documentSymbols, GoOutlineImportsOptions } from './goOutline';
-import {parseFilePrelude } from './util';
+import { parseFilePrelude } from './util';
 
 export function getTextEditForAddImport(inputText: string, arg: string): vscode.TextEdit[] {
 	// Import name wasn't provided
@@ -12,15 +12,14 @@ export function getTextEditForAddImport(inputText: string, arg: string): vscode.
 		return null;
 	}
 
-	
 	const { imports, pkg } = parseFilePrelude(inputText);
 	if (imports.some((block) => block.pkgs.some((pkgpath) => pkgpath === arg))) {
 		return [];
 	}
-	
+
 	const multis = imports.filter((x) => x.kind === 'multi');
 	const minusCgo = imports.filter((x) => x.kind !== 'pseudo');
-	
+
 	if (multis.length > 0) {
 		// There is a multiple import declaration, add to the last one
 		const lastImportSection = multis[multis.length - 1];
@@ -34,18 +33,18 @@ export function getTextEditForAddImport(inputText: string, arg: string): vscode.
 		// There are some number of single line imports, which can just be collapsed into a block import.
 		const edits = [];
 
-		edits.push(vscode.TextEdit.insert(new vscode.Position(minusCgo[0].start-1, 0), 'import (\n\t"' + arg + '"\n'));
+		edits.push(vscode.TextEdit.insert(new vscode.Position(minusCgo[0].start - 1, 0), 'import (\n\t"' + arg + '"\n'));
 		minusCgo.forEach((element) => {
-			const currentLine = vscode.window.activeTextEditor.document.lineAt(element.start-1).text;
+			const currentLine = vscode.window.activeTextEditor.document.lineAt(element.start - 1).text;
 			const updatedLine = currentLine.replace(/^\s*import\s*/, '\t');
 			edits.push(
 				vscode.TextEdit.replace(
-					new vscode.Range(element.start-1, 0, element.start-1, currentLine.length),
+					new vscode.Range(element.start - 1, 0, element.start - 1, currentLine.length),
 					updatedLine
 				)
 			);
 		});
-		edits.push(vscode.TextEdit.insert(new vscode.Position(minusCgo[minusCgo.length - 1].end-1, 0), ')\n'));
+		edits.push(vscode.TextEdit.insert(new vscode.Position(minusCgo[minusCgo.length - 1].end - 1, 0), ')\n'));
 
 		return edits;
 	} else if (pkg && pkg.start >= 0) {
@@ -126,7 +125,7 @@ export function addImport(arg: { importPath: string; from: string }) {
 		if (!imp) {
 			return;
 		}
-		const edits = getTextEditForAddImport(vscode.window.activeTextEditor.document.getText(),imp);
+		const edits = getTextEditForAddImport(vscode.window.activeTextEditor.document.getText(), imp);
 		if (edits && edits.length > 0) {
 			const edit = new vscode.WorkspaceEdit();
 			edit.set(editor.document.uri, edits);
