@@ -24,14 +24,14 @@ export class GoPlusDocumentFormattingEditProvider implements vscode.DocumentForm
 
         const filename = document.fileName;
         const goPlusConfig = getGoPlusConfig(document.uri);
-        const formatTool = goPlusConfig['formatTool'] || 'qfmt';
+        const formatTool = goPlusConfig['formatTool'] || 'gop';
         const formatFlags = goPlusConfig['formatFlags'].slice() || [];
-
+        
         // We ignore the -w flag that updates file on disk because that would break undo feature
 		if (formatFlags.indexOf('-w') > -1) {
-			formatFlags.splice(formatFlags.indexOf('-w'), 1);
+            formatFlags.splice(formatFlags.indexOf('-w'), 1);
 		}
-
+        
         return this.runFormatter(formatTool, formatFlags, document, token).then(
             (edits) => edits,
             (err) => {
