@@ -69,11 +69,11 @@
             "properties": {
                 "goplus.formatTool": {
                     "type": "string",
-                    "default": "gop",
-                    "description": "Pick 'gop fmt' to run on format.",
+                    "default": "gopfmt",
+                    "description": "Pick 'gopfmt' to run on format.",
                     "scope": "resource",
                     "enum": [
-                        "gop"
+                        "gopfmt"
                     ]
                 },
                 "goplus.formatFlags": {
@@ -81,7 +81,7 @@
                     "items": {
                         "type": "string"
                     },
-                    "default": ["fmt"],
+                    "default": [],
                     "description": "Flags to pass to format tool (e.g. [\"-w\"])",
                     "scope": "resource"
                 },
