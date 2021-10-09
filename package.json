@@ -2,7 +2,7 @@
     "name": "goplus",
     "displayName": "goplus",
     "description": "GoPlus",
-    "version": "0.7.3",
+    "version": "0.7.4",
     "engines": {
         "vscode": "^1.46.0"
     },
@@ -69,11 +69,11 @@
             "properties": {
                 "goplus.formatTool": {
                     "type": "string",
-                    "default": "qfmt",
-                    "description": "Pick 'qfmt' to run on format.",
+                    "default": "gopfmt",
+                    "description": "Pick 'gopfmt' to run on format.",
                     "scope": "resource",
                     "enum": [
-                        "qfmt"
+                        "gopfmt"
                     ]
                 },
                 "goplus.formatFlags": {
@@ -97,10 +97,10 @@
                     "description": "Alternate tools or alternate paths for the same tools used by the Go extension. Provide either absolute path or the name of the binary in GOPATH/bin, GOROOT/bin or PATH. Useful when you want to use wrapper script for the Go tools or versioned tools from https://gopkg.in.",
                     "scope": "resource",
                     "properties": {
-                        "qfmt": {
+                        "gopfmt": {
                             "type": "string",
-                            "default": "qfmt",
-                            "description": "Alternate tool to use instead of the qfmt binary or alternate path to use for the qfmt binary."
+                            "default": "gopfmt",
+                            "description": "Alternate tool to use instead of the gopfmt binary or alternate path to use for the gopfmt binary."
                         }
                     }
                 },

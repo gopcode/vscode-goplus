@@ -110,10 +110,10 @@ export function getConfiguredTools(): Tool[] {
 }
 
 export const allToolsInformation: { [key: string]: Tool } = {
-	'qfmt': {
-		name: 'qfmt',
-		importPath: 'github.com/qiniu/goplus/cmd/qfmt',
-		isImportant: false,
+	'gopfmt': {
+		name: 'gopfmt',
+		importPath: 'github.com/goplus/gop/cmd/gopfmt',
+		isImportant: true,
 		description: 'Formatter'
 	}
 };
