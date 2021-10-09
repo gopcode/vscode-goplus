@@ -30,8 +30,7 @@ export class GoPlusDocumentFormattingEditProvider implements vscode.DocumentForm
         // We ignore the -w flag that updates file on disk because that would break undo feature
 		if (formatFlags.indexOf('-w') > -1) {
             formatFlags.splice(formatFlags.indexOf('-w'), 1);
-		}
-        
+        }
         return this.runFormatter(formatTool, formatFlags, document, token).then(
             (edits) => edits,
             (err) => {
