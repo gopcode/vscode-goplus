@@ -110,9 +110,9 @@ export function getConfiguredTools(): Tool[] {
 }
 
 export const allToolsInformation: { [key: string]: Tool } = {
-	'gop': {
-		name: 'gop',
-		importPath: 'github.com/goplus/gop/cmd/gop',
+	'gopfmt': {
+		name: 'gopfmt',
+		importPath: 'github.com/goplus/gop/cmd/gopfmt',
 		isImportant: true,
 		description: 'Formatter'
 	}
