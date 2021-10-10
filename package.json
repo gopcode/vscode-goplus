@@ -1,12 +1,12 @@
 {
-    "name": "goplus",
+    "name": "gop",
     "displayName": "goplus",
     "description": "GoPlus",
     "version": "0.7.4",
     "engines": {
         "vscode": "^1.46.0"
     },
-    "publisher": "wyvern",
+    "publisher": "goplus",
     "activationEvents": [
         "onLanguage:gop"
     ],
