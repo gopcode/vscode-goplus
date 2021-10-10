@@ -1,4 +1,4 @@
-src/**/*
+src/
 test/
 third_party/
 typings/**/*
@@ -7,13 +7,12 @@ tsconfig.json
 .gitignore
 **/*.map
 **/tslint.json
-build/**/*
+build/
 docs/
 *.md.nightly
 .github/**/*
 .prettierrc.json
-out/test/**
+out/
 .vscode-test/**
 SECURITY.md
-node_modules/*
-out/*
+node_modules/

@@ -14,6 +14,7 @@
 # Output of nodejs and typescript
 out
 node_modules
+dist
 
 # Other
 .vscode-test

@@ -267,7 +267,7 @@ export class GoPlusCompletionItemProvider implements vscode.CompletionItemProvid
 			path.dirname(item.fileName),
 			item.package || path.dirname(item.fileName),
 			item.receiver,
-			item.label,
+			item.label.toString(),
 			token
 		)
 			.then((doc) => {
@@ -397,7 +397,7 @@ export class GoPlusCompletionItemProvider implements vscode.CompletionItemProvid
 								areCompletionsForPackageSymbols = true;
 							}
 							if (suggest.class === 'package') {
-								const possiblePackageImportPaths = this.getPackageImportPath(item.label);
+								const possiblePackageImportPaths = this.getPackageImportPath(item.label.toString());
 								if (possiblePackageImportPaths.length === 1) {
 									item.detail = possiblePackageImportPaths[0];
 								}
