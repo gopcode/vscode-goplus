@@ -141,7 +141,7 @@
             {
                 "id": "vs-goplus",
                 "label": "GoPlus (Visual Studio Code)",
-                "path": "./fileicons/vs_goplus-icons-theme.json"
+                "path": "./fileicons/vs_goplus-icon-theme.json"
             }
         ]
     },
