@@ -1,9 +1,8 @@
 {
-    "scopeName": "source.gop",
+    "scopeName": "source.spx",
     "comment": "GoPlus language",
     "fileTypes": [
-        "gop",
-        "gmx"
+        "spx"
     ],
     "foldingStartMarker": "(?x)/\\*\\*(?!\\*)|^(?![^{]*?//|[^{]*?/\\*(?!.*?\\*/.*?\\{)).*?\\{\\s*($|//|/\\*(?!.*?\\*/.*\\S))",
     "foldingStopMarker": "(?&lt;!\\*)\\*\\*/|^\\s*\\}",
@@ -92,8 +91,13 @@
 		},
 		{
 			"comment": "Built-in functions",
-			"match": "\\b(append|cap|close|complex|copy|delete|imag|len|make|new|panic|print|println|real|recover)\\b(?=\\()",
+			"match": "\\b(append|cap|close|complex|copy|delete|imag|len|make|new|panic|print|println|real|recover)\\b",
             "name": "support.function.builtin.gop"
+		},
+		{
+			"comment": "Spx Built-in functions",
+			"match": "\\b(step|move|turn|changeHeading|goto|setXYpos|glide|turnTo|setHeading|changeXpos|setXpos|changeYpos|setYpos|changeXYpos|bounceOffEdge|setRotationStyle|xpos|ypos|heading|say|think|setCostume|nextCostume|prevCostume|animate|startScene|nextScene|prevScene|changeSize|setSize|changeEffect|setEffect|clearGraphEffects|show|hide|gotoFront|gotoBack|goBackLayers|costumeIndex|costumeName|size|visible|width|height|play|stopAllSounds|changeEffect|setEffect|clearSoundEffect|changeVolume|setVolume|volume|onStart|onAnyKey|onKey|onClick|onAnyScene|onMsg|onMoving|onTurning|broadcast|wait|onClone|clone|Sprite|destroy|die|setDying|stopped|cloned|touching|onTouched|touchingColor|distanceTo|ask|answer|keyPressed|mousePressed|mouseX|mouseY|timer|resetTimer|username|clear|stamp|penDown|penUp|setPenColor|changePenSize|setPenSize)\\b",
+            "name": "support.function.builtin.spx"
 		},
 		{
 			"comment": "Function declarations",
