@@ -2,13 +2,14 @@
     "name": "gop",
     "displayName": "goplus",
     "description": "GoPlus",
-    "version": "0.7.4",
+    "version": "0.7.8",
     "engines": {
         "vscode": "^1.46.0"
     },
     "publisher": "goplus",
     "activationEvents": [
-        "onLanguage:gop"
+        "onLanguage:gop",
+        "onLanguage:spx"
     ],
     "license": "Apache-2.0",
     "icon": "images/icon.png",
@@ -42,6 +43,19 @@
                     ".gop"
                 ],
                 "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "spx",
+                "aliases": [
+                    "goplus",
+                    "gop",
+                    "spx"
+                ],
+                "extensions": [
+                    ".gmx",
+                    ".spx"
+                ],
+                "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
@@ -49,16 +63,32 @@
                 "language": "gop",
                 "scopeName": "source.gop",
                 "path": "./syntaxes/gop.tmLanguage.json"
+            },
+            {
+                "language": "spx",
+                "scopeName": "source.spx",
+                "path": "./syntaxes/spx.tmLanguage.json"
             }
         ],
         "snippets": [
             {
                 "language": "gop",
                 "path": "./snippets/goplus.json"
+            },
+            {
+                "language": "spx",
+                "path": "./snippets/spx.json"
             }
         ],
         "configurationDefaults": {
             "[gop]": {
+                "editor.insertSpaces": false,
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {
+                    "source.organizeImports": true
+                }
+            },
+            "[spx]": {
                 "editor.insertSpaces": false,
                 "editor.formatOnSave": true,
                 "editor.codeActionsOnSave": {

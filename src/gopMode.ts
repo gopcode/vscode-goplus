@@ -8,3 +8,4 @@
 import vscode = require('vscode');
 
 export const GOP_MODE: vscode.DocumentFilter = { language: 'gop', scheme: 'file' };
+export const SPX_MODE: vscode.DocumentFilter = { language: 'spx', scheme: 'file' };

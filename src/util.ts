@@ -201,7 +201,7 @@ export const getGoConfig = (uri?: vscode.Uri) => {
 };
 
 export function getBinPath(tool: string, useCache = true): string {
-	const cfg = getGoConfig();
+	const cfg = getGoPlusConfig();
 	const alternateTools: { [key: string]: string } = cfg.get('alternateTools');
 	const alternateToolPath: string = alternateTools[tool];
 
