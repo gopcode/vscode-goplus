@@ -179,7 +179,7 @@
         "vscode-debugadapter": "^1.40.0",
         "vscode-debugprotocol": "^1.40.0",
         "vscode-languageclient": "6.1.0",
-        "moment": "^2.24.0",
+        "moment": "^2.29.2",
         "semver": "^7.3.2",
         "lodash": "^4.17.21",
         "ansi-regex": ">=5.0.1",
